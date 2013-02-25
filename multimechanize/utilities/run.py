@@ -95,7 +95,7 @@ def run_test(project_name, cmd_opts, remote_starter=None):
                             script_file, run_time, rampup)
         user_groups.append(ug)
     for user_group in user_groups:
-        user_group.start()
+        user_group.run()
 
     start_time = time.time()
 

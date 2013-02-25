@@ -32,8 +32,8 @@ class ScriptValidator(object):
         """
         transaction_class = getattr(module, "Transaction", None)
         if not transaction_class:
-            return "{module}.Transaction class missing".format(
-                        module=module.__name__)
+            print str(module) + " does not contain Transaction class, skipping.."
+            return None
         run_method = getattr(transaction_class, "run", None)
         if not run_method:
             return "{module}.Transaction.run() method is missing".format(
